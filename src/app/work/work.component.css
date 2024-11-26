@@ -181,6 +181,10 @@
     }
   }
 
+  .resume-container{
+    margin-bottom: 20px;
+  }
+
   .project{
     .project-image{
       width: 120px;
