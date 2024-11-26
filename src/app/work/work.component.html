@@ -1,0 +1,113 @@
+<!-- <div class="container">
+    <section class="experience">
+        <div class="experience-title">
+            <h2 class="title-with-line">EXPERIENCES</h2>
+            <div class="line"></div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="center" class="work-experience-section" fxLayoutGap="15px">
+            <div fxFlex="70%" fxLayout="column">
+                <div *ngFor="let experience of workExperiences" fxLayout="row" fxLayoutAlign="start center"
+                    class="experience-item">
+                    <div fxFlex="20" class="year">{{ experience.year }}</div>
+
+                    <div fxFlex="80" class="description">
+                        <h3>{{ experience.title }}</h3>
+                        <p>{{ experience.company }}</p>
+                        <p>{{ experience.description }}</p>
+                        <mat-chip-set class="chip-list">
+                            <mat-chip *ngFor="let tech of experience.technologies" class="tech-chip">
+                                {{ tech }}
+                            </mat-chip>
+                        </mat-chip-set>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p>Selected Key Milestone Projects from My Career</p>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="projects-section">
+            <div fxFlex="80%" fxLayout="column">
+                <div *ngFor="let project of projects" fxLayout="row" fxLayoutAlign="start center" class="project-item"
+                    tabindex="0">
+
+                    <div fxFlex="15" fxFlex.xs="30" class="project-image-container">
+                        <img [src]="project.image" alt="{{ project.title }}" class="project-image">
+                    </div>
+
+                    <div fxFlex="80" class="project-description">
+                        <h3 class="project-title">{{ project.title }} <a href="{{ project.link }}" target="_blank"
+                                rel="noopener noreferrer">↗</a></h3>
+                        <p class="project-description">{{ project.description }}</p>
+
+                        <mat-chip-set class="chip-list">
+                            <mat-chip *ngFor="let tech of project.technologies" class="tech-chip">
+                                {{ tech }}
+                            </mat-chip>
+                        </mat-chip-set>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div> -->
+
+<div class="container">
+    <div class="experience" fxLayout="column" fxLayoutWrap fxLayoutGap="30px" fxLayoutGap.lt-md="20px">
+        <h4 class="title">EXPERIENCE</h4>
+        <div fxLayout="column" fxLayoutWrap fxLayoutGap="40px" fxLayoutGap.lt-md="30px" class="expwarp">
+            <div *ngFor="let experience of workExperiences" fxLayout="row" fxLayout.lt-md="column"
+                fxLayoutAlign="start left" fxLayoutGap="15px" fxLayoutGap.lt-md="10px" class="exp-item">
+                <div fxFlex="20" class="year">{{experience.year}}</div>
+
+                <div fxFlex="80" class="exp-desc">
+                    <h4 class="exp-title">{{ experience.title }}</h4>
+                    <p class="comp"><strong> <i>{{ experience.company }}</i></strong></p>
+                    <p>{{ experience.description }}</p>
+                    <mat-chip-set class="chip-list">
+                        <mat-chip color="primary" *ngFor="let tech of experience.technologies" class="tech-chip">
+                            {{ tech }}
+                        </mat-chip>
+                    </mat-chip-set>
+                </div>
+            </div>
+        </div>
+        <div class="resume-container">
+            <button mat-raised-button color="primary" (click)="downloadResume()" class="resume">
+                <mat-icon>download</mat-icon>
+                View Full Resume
+            </button>
+        </div>
+    </div>
+    <hr class="dashed-line" />
+    <div class="project" fxLayout="column" fxLayoutWrap fxLayoutGap="30px">
+        <h4 class="title">Selected Key Milestone Projects from My Career</h4>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap="15px"  fxLayoutGap.lt-md="10px">
+            <div *ngFor="let project of projects" fxFlex="1 1 35%" fxLayout="column" fxLayoutAlign="start stretch" 
+                class="project-item">
+                <div class="project-image-container" fxLayoutAlign="center center" fxLayoutAlign.lt-md="center left">
+                    <img [src]="project.image" alt="{{ project.title }}" class="project-image" />
+                </div>
+
+                <div class="project-description">
+                    <h4 class="prj-title">
+                        {{ project.title }}
+                        <!-- <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">↗</a> -->
+                    </h4>
+                    <p class="project-description">{{ project.description }}</p>
+
+                    <mat-chip-set class="chip-list">
+                        <mat-chip *ngFor="let tech of project.technologies" class="tech-chip">
+                            {{ tech }}
+                        </mat-chip>
+                    </mat-chip-set>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

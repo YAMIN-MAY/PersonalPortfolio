@@ -1,0 +1,65 @@
+<div class="container">
+  <section class="main-section">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap fxLayoutGap.lt-md="20px">
+      <div class="card1" fxFlex="1 1 35%" fxFlex.lt-md="1 1 30%" fxFlex.lt-md="100%" fxLayout="column" fxLayoutAlign="center center">
+        <hr class="dashed-line" />
+        <div class="card1-small">
+        <p class="home-title">
+          <strong>Hello, I'm</strong>
+        </p>
+        <h1 class="h1-name">
+          <span @typingColor>Yamin May</span>
+        </h1>
+        </div>
+      </div>
+      <div class="card2" fxFlex="1 1 30%" fxFlex.lt-md="100%" fxLayout="column" fxLayoutAlign="center center">
+        <a routerLink="/about">
+        <img src="assets/main-tran.jpeg" alt="Hover Image" class="home-img"
+        onmouseover="this.src='assets/main-img.png'" 
+        onmouseout="this.src='assets/main-tran.jpeg';">
+        </a>
+      </div>
+      <div class="card3" fxFlex="1 1 35%" fxFlex.lt-md="100%" fxLayout="column" fxLayoutAlign="center left" fxLayoutAlign.lt-md="center center">
+        <p class="home-title">
+          <strong>Dedicated Software Engineer <br> Knowledge Seeker</strong>
+        </p>
+
+        <hr class="dashed-line" />
+      </div>
+    </div>
+    <div class="aboutme-link" fxLayout="row" fxLayoutWrap fxLayoutAlign="center center" fxHide fxShow.gt-sm>
+      <a mat-stroked-button routerLink="/about" class="point-link">
+        <mat-icon>face</mat-icon>
+        About me >
+      </a>
+    </div>
+    <div class="summary" fxLayoutAlign="center center" fxLayoutWrap>
+      <p >
+        A passionate <b>Software Engineer</b> currently based in Singapore, specializing in development, implementation, and systems analysis for web, window and client/server applications using <b> C# Language, ASP.NET and ASP.NET Core</b>.<br>
+        I am skilled in building enterprise-level web applications, integrating Web APIs and third-party systems, and leveraging UI technologies such as <b>Angular, HTML, JavaScript, and TypeScript</b> . 
+        <!-- <br>
+        I am always eager to learn and adopt new advancements in the tech field. -->
+      </p>
+    </div>
+    <div class="experience-link">
+      <a mat-stroked-button routerLink="/work" class="point-link">
+        <mat-icon>work</mat-icon>
+        View My Work >
+      </a>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hoverImage = document.getElementById('hoverImage');
+    if (hoverImage) {
+      hoverImage.addEventListener('touchstart', function() {
+        this.src = 'assets/main-img.png';
+      });
+      hoverImage.addEventListener('touchend', function() {
+        this.src = 'assets/main-tran.jpeg';
+      });
+    }
+  });
+</script>

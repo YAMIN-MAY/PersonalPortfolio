@@ -1,0 +1,35 @@
+<footer class="footer">
+    <div class="footer-main" fxLayout="row" fxLayout.lt-md="row" fxLayout.sm="row" fxLayoutGap="20px">
+      <div fxFlex="50" fxLayout="row" fxLayout.lt-md="row" fxLayout.sm="row" fxLayoutGap="5px" class="nav-links" fxHide fxShow.gt-sm>
+        <nav>
+          <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
+          <a mat-button routerLink="/work" routerLinkActive="active-link">Work</a>
+          <a mat-button routerLink="/about" routerLinkActive="active-link">About</a>
+        </nav>
+      </div>
+      <div fxFlex fxLayout="row" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-md="center center" class="footer-social" fxLayoutGap="25px" fxLayoutGap.lt-md="35px">
+        <a href="https://www.linkedin.com/in/yamin-may/" target="_blank" class="linkedin-icon">
+          <fa-icon [icon]="faLinkedin" ></fa-icon>
+        </a>
+
+        <a href="https://github.com/YAMIN-MAY" target="_blank">
+          <fa-icon [icon]="faGithub" ></fa-icon>
+        </a>
+  
+        <a href="yaminmay.ym96@gmail.com" target="_blank">
+          <fa-icon [icon]="faEnvelope" ></fa-icon>
+        </a>
+  
+        <a href="https://www.facebook.com/yamin.may.7" target="_blank">
+          <fa-icon [icon]="faFacebook" ></fa-icon>
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer-credit" fxLayoutAlign="center center">
+      <p>&copy;2024 Yamin May. All rights reserved.</p>
+    </div>
+</footer>
+
+
+

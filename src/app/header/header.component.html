@@ -1,0 +1,29 @@
+
+<header fxLayout="row" fxLayoutAlign="space-between center" class="header">
+
+  <div fxLayout="row" fxLayoutAlign="start center" class="logo">
+    <img class="logo-img" src="assets/logo.jpeg" alt="Logo">
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="start center" class="right-section" fxLayoutGap="15px">
+    <nav fxHide fxShow.gt-sm fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="nav-links">
+      <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
+      <a mat-button routerLink="/work" routerLinkActive="active-link">Work</a>
+      <a mat-button routerLink="/about" routerLinkActive="active-link">About</a>
+    </nav>
+
+    <button fxHide.gt-sm mat-icon-button [matMenuTriggerFor]="mobileMenu" fxLayoutAlign="space-between center" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #mobileMenu="matMenu">
+      <button mat-menu-item routerLink="/home" routerLinkActive="active-link">Home</button>
+      <button mat-menu-item routerLink="/work" routerLinkActive="active-link">Work</button>
+      <button mat-menu-item routerLink="/about" routerLinkActive="active-link">About</button>
+    </mat-menu>
+
+    <button (click)="toggleTheme()" mat-button class="theme-toggle"> 
+      <fa-icon [icon]="isDarkMode ? faSun : faMoon"></fa-icon>
+    </button>
+  </div>
+
+</header>
