@@ -21,4 +21,24 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 })
 export class HomeComponent {
+  images: string[] = [
+    'assets/main-tran.jpeg',
+    'assets/main-tran.jpeg'
+  ];
+
+  //  currentImageIndex = 0;
+  // private intervalId: any;
+
+  // ngOnInit(): void {
+  //   this.intervalId = setInterval(() => {
+  //     this.currentImageIndex =
+  //       (this.currentImageIndex + 1) % this.images.length;
+  //   }, 2000); 
+  // }
+
+  // ngOnDestroy(): void {
+  //   if (this.intervalId) {
+  //     clearInterval(this.intervalId);
+  //   }
+  // }
 }

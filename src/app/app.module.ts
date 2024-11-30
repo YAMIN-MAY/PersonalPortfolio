@@ -20,7 +20,7 @@ import { WorkComponent } from './work/work.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
-import { MatMenuModule } from '@angular/material/menu'
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -54,4 +54,5 @@ import { MatMenuModule } from '@angular/material/menu'
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
