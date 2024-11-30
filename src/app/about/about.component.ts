@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit, OnDestroy} from '@angular/core';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
@@ -21,6 +21,15 @@ export class AboutComponent {
     'assets/run.jpg'
   ];
 
+  currentImageIndex = 0; intervalId: any;
+
+  ngOnInit() { 
+    this.intervalId = setInterval(() => this.changeImage(), 3000); 
+  }
+
+  ngOnDestroy() { if (this.intervalId) { clearInterval(this.intervalId); } }
+
+  changeImage() { this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length; }
   // currentImageIndex = 0;
   // private intervalId: any;
 

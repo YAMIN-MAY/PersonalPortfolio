@@ -39,14 +39,13 @@
                 As an animal lover, I support animal rescue efforts to contribute to their welfare.
             </p>
         </div>
-        <div fxFlex="35%" fxFlex.lt-md="100%" class="image-container">
-            <img src="assets/beyondcode.jpeg" alt="My Hobby Image" class="hobby-img" />
-        </div>
         <!-- <div fxFlex="35%" fxFlex.lt-md="100%" class="image-container">
-            <img *ngFor="let img of images; let i = index" [src]="img" alt="Hobby Image"
-                [class.active]="currentImageIndex === i" class="hobby-img" />
+            <img src="assets/beyondcode.jpeg" alt="My Hobby Image" class="hobby-img" />
         </div> -->
-
+        <div fxFlex.gt-md="35%" class="slider-container">
+            <div *ngFor="let img of images; let i = index" class="image-wrapper" [class.visible]="currentImageIndex === i">
+                <img [src]="img" alt="Slideshow Image" class="slider-image">
+            </div>
+        </div>
     </div>
-
 </div>

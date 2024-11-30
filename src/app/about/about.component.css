@@ -27,41 +27,21 @@
   padding-right: 9%;
 }
 
-/* .image-container {
-    text-align: center;
-  } */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 
-  .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  .abt-img{
+    object-fit: cover;
+    height: 400px;
     width: 100%;
-    height: 100%;
-
-    .abt-img{
-      object-fit: cover;
-      height: 400px;
-      width: 100%;
-      border-radius: 100px 0 0 100px;
-    }
-  
-    .hobby-img {
-      /* position: absolute; */
-      object-fit: cover;
-      /* opacity: 0; */
-      width: 100%;
-      height: 400px;
-      max-width: 100%;
-      border-radius: 0px 100px 100px 0px;
-      /* transition: opacity 1s ease-in-out; */
-    }
-  
-    .hobby-img.active {
-      opacity: 1;
-      z-index: 10;
-    }
+    border-radius: 100px 0 0 100px;
   }
+}
 
 h2 {
   font-size: 1.8rem;
@@ -69,6 +49,34 @@ h2 {
   color: var(--name-color);
 }
 
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px; 
+  overflow: hidden;
+}
+
+.image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-wrapper.visible {
+  opacity: 1;
+}
+
+.slider-image {
+  border-radius: 0px 100px 100px 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
 
 @media screen and (max-width: 600px) {
 
@@ -95,30 +103,15 @@ h2 {
   }
 
   .image-container {
-    .abt-img , .hobby-img{
+    .abt-img{
       max-width: 100%;
       width: auto;
       height: auto;
       border-radius: 8px;
     }
-    /* height: 200px;
-    .abt-img , .hobby-img{
-      position: relative;
-      max-width: 100%;
-      width: 100%;
-      height: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
-    .hobby-img{
-      position: relative;
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-    } */
+  }
+  .slider-image{
+    border-radius: 8px;
   }
 
 }
