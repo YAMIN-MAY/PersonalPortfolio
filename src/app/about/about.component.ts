@@ -1,18 +1,9 @@
-import { Component , OnInit, OnDestroy} from '@angular/core';
-import { trigger, transition, style, animate, state } from '@angular/animations';
-
+import { Component,Inject,PLATFORM_ID} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css',
-  // animations: [
-  //   trigger('fadeAnimation', [
-  //     state('visible', style({ opacity: 1 })),
-  //     state('hidden', style({ opacity: 0 })),
-  //     transition('hidden => visible', animate('1s ease-in')),
-  //     transition('visible => hidden', animate('1s ease-out')),
-  //   ]),
-  // ],
+  styleUrl: './about.component.css'
 })
 export class AboutComponent {
   images: string[] = [
@@ -21,29 +12,32 @@ export class AboutComponent {
     'assets/run.jpg'
   ];
 
-  currentImageIndex = 0; intervalId: any;
+  currentImageIndex = 0; 
+  intervalId: any;
+  
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  ngOnInit() { 
-    this.intervalId = setInterval(() => this.changeImage(), 3000); 
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.intervalId = setInterval(() => this.changeImage(), 2000);
+    }
   }
 
-  ngOnDestroy() { if (this.intervalId) { clearInterval(this.intervalId); } }
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
 
-  changeImage() { this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length; }
-  // currentImageIndex = 0;
-  // private intervalId: any;
+  changeImage() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+  }
 
-  // ngOnInit(): void {
-  //   this.intervalId = setInterval(() => {
-  //     this.currentImageIndex =
-  //       (this.currentImageIndex + 1) % this.images.length;
-  //   }, 3000); 
+  // ngOnInit() { 
+  //   this.intervalId = setInterval(() => this.changeImage(), 2000); 
   // }
 
-  // ngOnDestroy(): void {
-  //   if (this.intervalId) {
-  //     clearInterval(this.intervalId);
-  //   }
-  // }
+  // ngOnDestroy() { if (this.intervalId) { clearInterval(this.intervalId); } }
 
+  // changeImage() { this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length; }
 }
