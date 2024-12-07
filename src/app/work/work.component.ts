@@ -10,7 +10,7 @@ import { link } from 'fs';
 export class WorkComponent {
 
   downloadResume(){
-    const fileUrl = 'assets/Ms.Yamin May.pdf'; 
+    const fileUrl = 'assets/Mrs.Yamin.pdf'; 
     const fileName = 'Ms.Yamin May.pdf'; 
     const link = document.createElement('a');
     link.href = fileUrl;
